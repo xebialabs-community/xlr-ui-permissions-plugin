@@ -20,14 +20,14 @@
 					<th>Title</th>
 					<th>Team</th>
 					<th>UserList</th>
-					<th ng-repeat="items in globalperms">{{items.replace("#"," ").replace("_"," ")}}</th>
+					<th ng-repeat="items in globalpermNames">{{items.replace("#"," ").replace("_"," ")}}</th>
 				</tr>
 				<tbody ng-repeat="(key,value) in resultCis">
 					<tr ng-if="key.split('::')[0] == 'TEMPLATE'">
 						<td>{{key.split('::')[1]}}</td>
 						<td>{{key.split('::')[2]}}</td>
 						<td>{{key.split('::')[3]}}</td>
-						<td ng-repeat="item in globalperms"><label><i ng-class="value.indexOf(item) > -1 ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove' "></i></label></td>
+						<td ng-repeat="item in globalperms"><label><i ng-class="value.indexOf(item) > -1 ? 'glyphicon glyphicon-ok' : '' "></i></label></td>
 					</tr>
 				</tbody>
 			</table>
@@ -42,14 +42,14 @@
 					<th>Title</th>
 					<th>Team</th>
 					<th>UserList</th>
-					<th ng-repeat="items in allperms">{{items.replace("#"," ").replace("_"," ")}}</th>
+					<th ng-repeat="items in allpermNames">{{items.replace("#"," ").replace("_"," ")}}</th>
 				</tr>
 				<tbody ng-repeat="(key,value) in resultCis">
 					<tr ng-if="key.split('::')[0] != 'TEMPLATE'">
 						<td>{{key.split('::')[1]}}</td>
 						<td>{{key.split('::')[2]}}</td>
 						<td>{{key.split('::')[3]}}</td>
-						<td ng-repeat="item in allperms"><i ng-class="value.indexOf(item) > -1 ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove' "></i></td>
+						<td ng-repeat="item in allperms"><i ng-class="value.indexOf(item) > -1 ? 'glyphicon glyphicon-ok' : '' "></i></td>
 					</tr>
 				</tbody>
 			</table>

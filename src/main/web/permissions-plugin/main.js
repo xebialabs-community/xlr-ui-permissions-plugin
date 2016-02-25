@@ -15,7 +15,9 @@ angular
 		.controller(
 				'RepoController',
 				function($http, $scope) {
-					$scope.globalperms= [ 'template#view','template#create_release', 'template#edit', 'template#edit_security' ];
+					$scope.globalpermNames = ['Create Release','View Template', 'Edit Template', 'Edit Security'];
+					$scope.globalperms= [ 'template#create_release','template#view', 'template#edit', 'template#edit_security' ];
+					$scope.allpermNames = ['View Release', 'Edit Release', 'Edit Security', 'Start Release', 'Abort Release', 'Edit Task', 'Reassign Task']
 					$scope.allperms = ['release#view', 'release#edit', 'release#edit_security', 'release#start', 'release#abort', 'release#edit_task', 'release#reassign_task'];
 												
 					$scope.loadCis = function() {
