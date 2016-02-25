@@ -19,7 +19,8 @@
 				<tr>
 					<th>Title</th>
 					<th>Team</th>
-					<th>UserList</th>
+					<th>Granted to : Users</th>
+					<th>Granted to : Roles</th>
 					<th ng-repeat="items in globalpermNames">{{items.replace("#"," ").replace("_"," ")}}</th>
 				</tr>
 				<tbody ng-repeat="(key,value) in resultCis">
@@ -27,6 +28,7 @@
 						<td>{{key.split('::')[1]}}</td>
 						<td>{{key.split('::')[2]}}</td>
 						<td>{{key.split('::')[3]}}</td>
+						<td>{{key.split('::')[4]}}</td>
 						<td ng-repeat="item in globalperms"><label><i ng-class="value.indexOf(item) > -1 ? 'glyphicon glyphicon-ok' : '' "></i></label></td>
 					</tr>
 				</tbody>
@@ -41,7 +43,8 @@
 				<tr>
 					<th>Title</th>
 					<th>Team</th>
-					<th>UserList</th>
+					<th>Granted to : Users</th>
+					<th>Granted to : Roles</th>
 					<th ng-repeat="items in allpermNames">{{items.replace("#"," ").replace("_"," ")}}</th>
 				</tr>
 				<tbody ng-repeat="(key,value) in resultCis">
@@ -49,6 +52,7 @@
 						<td>{{key.split('::')[1]}}</td>
 						<td>{{key.split('::')[2]}}</td>
 						<td>{{key.split('::')[3]}}</td>
+						<td>{{key.split('::')[4]}}</td>
 						<td ng-repeat="item in allperms"><i ng-class="value.indexOf(item) > -1 ? 'glyphicon glyphicon-ok' : '' "></i></td>
 					</tr>
 				</tbody>

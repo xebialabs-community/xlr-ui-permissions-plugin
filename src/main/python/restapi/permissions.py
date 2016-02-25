@@ -5,10 +5,13 @@ def exportSecurityToJSON():
 	for release in releaseApi._delegate.releases:
 		for team in release.teams:
 			member = []
+			role = []
 			member.extend(team.members)
-			member.extend(team.roles)
+			role.extend(team.roles)
 			member = map(lambda it: str(it), member)
-			print str(release.status) + " : " + release.title + " : " + team.teamName + " : " + str(member) + " : " + str(team.permissions)
-			security[str(release.status) + "::" + release.title + "::" + team.teamName + "::" + str(member)] = str(team.permissions)
+			role = map(lambda it: str(it), role)
+			memberString = str(member).replace("'","").replace("[","").replace("]","")
+			roleString = str(role).replace("'","").replace("[","").replace("]","")
+			security[str(release.status) + "::" + release.title + "::" + team.teamName + "::" + memberString + "::" + roleString] = str(team.permissions)
 	return security		
 response.entity = exportSecurityToJSON()
